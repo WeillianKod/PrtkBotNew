@@ -1,4 +1,6 @@
-from bset import settings
+# from bset import settings
+from dotenv import dotenv_values
+config = dotenv_values(".env")
 import discord
 from blogic import *
 
@@ -47,5 +49,4 @@ async def on_message(message):
         await message.channel.send("A) Menggunakan kembali botol atau kantong plastik untuk menyimpan makanan atau barang-barang kecil di rumah.")
         #await message.channel.send("B) Melakukan refill atau isi ulang botol-botol plastik dengan air minum untuk mengurangi penggunaan botol plastik sekali pakai.")
 
-
-client.run(settings["TOKEN"])
+client.run(config["TOKEN"])
